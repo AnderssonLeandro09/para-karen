@@ -1,0 +1,76 @@
+/* ============================================
+   RESPONSIVE.CSS — Mobile-first: tablet → desktop
+   ============================================ */
+
+/* ---------- TABLET (≥ 640px) ---------- */
+@media (min-width: 640px) {
+  .counter-grid {
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 640px;
+  }
+
+  .gallery-photos-row {
+    max-width: 680px;
+    margin: 0 auto;
+    gap: 1.4rem;
+  }
+
+  .video-card {
+    max-width: 380px;
+  }
+
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .capture-card {
+    max-width: 420px;
+  }
+}
+
+/* ---------- TABLET GRANDE / LAPTOP (≥ 900px) ---------- */
+@media (min-width: 900px) {
+  .hero-content {
+    padding-bottom: clamp(4rem, 12vh, 7rem);
+  }
+
+  .gallery-photos-row {
+    max-width: 760px;
+  }
+
+  .card-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .timeline {
+    padding-left: 2.2rem;
+  }
+
+  .letter-card {
+    padding: 4rem;
+  }
+}
+
+/* ---------- ESCRITORIO (≥ 1200px) ---------- */
+@media (min-width: 1200px) {
+  .section {
+    padding: var(--space-xl) 4rem;
+  }
+
+  .historia-text {
+    max-width: 720px;
+  }
+
+  .hero-title {
+    letter-spacing: -0.01em;
+  }
+}
+
+/* ---------- Altura reducida (landscape móvil) ---------- */
+@media (max-height: 480px) {
+  #hero {
+    height: auto;
+    min-height: 100vh;
+    padding: 6rem 1.25rem 3rem;
+  }
+}

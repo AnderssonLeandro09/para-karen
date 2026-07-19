@@ -1,0 +1,161 @@
+/* ============================================
+   ANIMATIONS.CSS — Keyframes globales
+   ============================================ */
+
+/* Ken Burns muy lento para el hero */
+@keyframes kenBurns {
+  0%   { transform: scale(1.0) translate(0, 0); }
+  100% { transform: scale(1.12) translate(-1%, -1.5%); }
+}
+
+/* Glow degradado continuo para "Hermosa" */
+@keyframes glowShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes glowPulse {
+  0%, 100% { filter: drop-shadow(0 0 18px rgba(217, 174, 114, 0.35)); }
+  50%      { filter: drop-shadow(0 0 34px rgba(196, 135, 147, 0.55)); }
+}
+
+/* Línea decorativa */
+@keyframes lineGrow {
+  from { width: 0; }
+  to   { width: 46px; }
+}
+
+/* Indicador de scroll */
+@keyframes scrollBounce {
+  0%, 100% { transform: translateY(0); opacity: 0.4; }
+  50%      { transform: translateY(10px); opacity: 1; }
+}
+
+/* Corazones flotando */
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% { opacity: var(--heart-opacity, 0.5); }
+  90% { opacity: var(--heart-opacity, 0.5); }
+  100% {
+    transform: translateY(-110vh) translateX(var(--drift, 20px)) rotate(20deg);
+    opacity: 0;
+  }
+}
+
+/* Luces suaves de fondo */
+@keyframes driftGlow {
+  0%   { transform: translate(0, 0) scale(1); }
+  50%  { transform: translate(3%, -4%) scale(1.08); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+
+/* Loader */
+@keyframes loaderPulse {
+  0%, 100% { opacity: 0.35; transform: scale(0.94); }
+  50%      { opacity: 1; transform: scale(1); }
+}
+
+@keyframes fadeOutLoader {
+  to { opacity: 0; visibility: hidden; }
+}
+
+/* Contador — micro énfasis al actualizar */
+@keyframes numberTick {
+  0%   { transform: translateY(6px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+/* Corazones flotando sobre el video (bucle infinito, solo CSS) */
+@keyframes videoHeartFloat {
+  0% {
+    transform: translateY(0) scale(0.6);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.9;
+  }
+  80% {
+    opacity: 0.55;
+  }
+  100% {
+    transform: translateY(-130px) scale(1.05);
+    opacity: 0;
+  }
+}
+
+
+   Solo ocultan contenido si JS está activo (html.js-enabled),
+   para que la página sea completamente legible sin JavaScript. */
+.reveal-fade,
+.reveal-blur,
+.reveal-up,
+.reveal-scale,
+.reveal-left,
+.reveal-right {
+  opacity: 1;
+}
+
+html.js-enabled .reveal-fade {
+  opacity: 0;
+  transition: opacity var(--dur-med) var(--ease-soft);
+}
+html.js-enabled .reveal-fade.is-visible { opacity: 1; }
+
+html.js-enabled .reveal-blur {
+  opacity: 0;
+  filter: blur(14px);
+  transition: opacity var(--dur-slow) var(--ease-slow),
+              filter var(--dur-slow) var(--ease-slow);
+}
+html.js-enabled .reveal-blur.is-visible {
+  opacity: 1;
+  filter: blur(0);
+}
+
+html.js-enabled .reveal-up {
+  opacity: 0;
+  transform: translateY(42px);
+  transition: opacity var(--dur-med) var(--ease-soft),
+              transform var(--dur-med) var(--ease-soft);
+}
+html.js-enabled .reveal-up.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+html.js-enabled .reveal-scale {
+  opacity: 0;
+  transform: scale(0.92);
+  transition: opacity var(--dur-med) var(--ease-soft),
+              transform var(--dur-med) var(--ease-soft);
+}
+html.js-enabled .reveal-scale.is-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+html.js-enabled .reveal-left {
+  opacity: 0;
+  transform: translateX(-46px);
+  transition: opacity var(--dur-med) var(--ease-soft),
+              transform var(--dur-med) var(--ease-soft);
+}
+html.js-enabled .reveal-left.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+html.js-enabled .reveal-right {
+  opacity: 0;
+  transform: translateX(46px);
+  transition: opacity var(--dur-med) var(--ease-soft),
+              transform var(--dur-med) var(--ease-soft);
+}
+html.js-enabled .reveal-right.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}

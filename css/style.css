@@ -1,0 +1,143 @@
+/* ============================================
+   STYLE.CSS — Base global (mobile-first)
+   ============================================ */
+
+body {
+  background: var(--bg-base);
+  color: var(--text-base);
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--fs-body);
+}
+
+::selection {
+  background: var(--color-rose);
+  color: var(--color-cream);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-cream);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-rose-light);
+  border-radius: 10px;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--text-base);
+  letter-spacing: 0.01em;
+}
+
+.label {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: var(--fs-small);
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--color-rose);
+  font-weight: 500;
+}
+
+.label-line {
+  width: 46px;
+  height: 1px;
+  background: var(--color-rose);
+  opacity: 0.5;
+}
+
+.section {
+  position: relative;
+  width: 100%;
+  padding: var(--section-padding);
+  overflow: hidden;
+}
+
+.section-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  position: relative;
+  z-index: var(--z-content);
+}
+
+.section-head {
+  text-align: center;
+  margin-bottom: var(--space-lg);
+}
+
+.highlight-text {
+  color: var(--color-rose);
+  font-style: italic;
+}
+
+/* ---- Glassmorphism reutilizable ---- */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--shadow-soft);
+}
+
+/* ---- Botones / controles genéricos ---- */
+.btn-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: transform var(--dur-fast) var(--ease-soft),
+              box-shadow var(--dur-fast) var(--ease-soft);
+}
+
+.btn-icon:hover {
+  transform: scale(1.08);
+}
+
+/* ---- Corazones / partículas flotantes ---- */
+#hearts-canvas,
+.particles-layer {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: var(--z-particles);
+}
+
+/* ---- Utilidades de visibilidad para animaciones ---- */
+.reveal {
+  opacity: 0;
+  will-change: transform, opacity, filter;
+}
+
+.is-visible {
+  opacity: 1;
+}
+
+/* ---- Footer ---- */
+.site-footer {
+  text-align: center;
+  padding: var(--space-lg) var(--space-md);
+  font-family: var(--font-script);
+  font-size: 1rem;
+  color: var(--text-muted);
+  background: var(--color-blush);
+}
+
+.site-footer .heart-emoji {
+  color: var(--color-rose);
+}
+
+.site-footer .footer-date {
+  display: block;
+  margin-top: 0.4rem;
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  opacity: 0.55;
+  text-transform: uppercase;
+}
